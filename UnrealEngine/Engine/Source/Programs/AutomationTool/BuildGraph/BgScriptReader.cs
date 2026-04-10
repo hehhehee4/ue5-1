@@ -1602,7 +1602,7 @@ namespace AutomationTool
 						BgReport? report;
 						if (_graph.NameToReport.TryGetValue(reportName, out report))
 						{
-							report.NotifyUsers.UnionWith(users);
+							if (users != null) report.NotifyUsers.UnionWith(users);
 						}
 						else
 						{
